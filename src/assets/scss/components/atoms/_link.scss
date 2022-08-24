@@ -1,0 +1,65 @@
+/*---link---*/
+@mixin makeLink($type: primary, $useDefault: true) {
+  @if $useDefault {
+    text-decoration-color: transparent;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+
+  @if $type == primary {
+    color: $main;
+    &:hover {
+      color: $main-hover;
+      text-decoration: underline;
+    }
+
+  } @else if $type == secondary {
+    color: $light;
+    &:hover {
+      color: $light;
+      text-decoration: underline;
+    }
+  } @else if $type == regular {
+    color: $dark;
+    &:hover {
+      color: $main-hover;
+      text-decoration: underline;
+    }
+  } @else if $type == white {
+    color: $white;
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+      text-decoration-color: $white;
+    }
+  } @else if $type == button {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+a, .link {
+  @include makeLink(primary)
+}
+
+.link-styled-list {
+  li {
+    padding: 0 16px;
+    transition: .2s ease-in-out;
+
+    @include rtls(border-left, 3px solid $main, none);
+    @include rtls(border-right, none, 3px solid $main);
+
+    &:hover {
+      border-color: $main-hover;
+    }
+  }
+
+}

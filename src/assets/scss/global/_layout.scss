@@ -1,0 +1,181 @@
+/*--layout--*/
+.row {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 0;
+
+  @include media(md) {
+    --bs-gutter-x: 2.5rem;
+    --bs-gutter-y: 0;
+  }
+
+  @include media(lg) {
+    --bs-gutter-x: 2.5rem;
+    --bs-gutter-y: 0;
+  }
+
+}
+
+.container,
+.container-fluid {
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @include media(md) {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+@include media(md) {
+  .container,
+  .container-sm {
+    max-width: 100%;
+  }
+}
+
+@include media(xl) {
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .container {
+    padding-right: 1.875rem;
+    padding-left: 1.875rem;
+  }
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
+
+@include media(576px) {
+  .container,
+  .container-sm {
+    max-width: 100%;
+  }
+}
+
+@include media(992px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 100%;
+  }
+}
+
+@include media(xxl) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+.site-wrap {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.site-main {
+  flex: 1;
+}
+
+.page-heading {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 16px;
+
+  @include media(lg) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include media(xl) {
+    padding-top: 110px;
+  }
+
+  &__category-link {
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 15px;
+    color: $main;
+    margin-bottom: 16px;
+  }
+
+  &__shared-meta {
+    margin-top: 16px;
+  }
+
+  &-medium-offset {
+    @include media(lg) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &-small-offset {
+    padding-bottom: 24px;
+  }
+
+  &-hero {
+    padding-top: 0;
+    padding-bottom: 32px;
+
+    @include media(md) {
+      padding-bottom: 40px;
+    }
+
+    @include media(xl) {
+      padding-bottom: 70px;
+    }
+  }
+
+}
+.page-main {
+  margin: 24px 0;
+
+  @include media(lg) {
+    margin: 32px 0;
+  }
+  @include media(xl) {
+    margin: 72px 0;
+  }
+}
+.page-heading + .page-main {
+  margin-top: 0;
+}
+.page-title {
+  font-size: 34px;
+  line-height: 40px;
+  color: $main;
+  text-align: center;
+
+  @include media(xl) {
+    font-size: 54px;
+    line-height: 58px;
+  }
+
+  &-medium {
+    font-size: 24px;
+    line-height: 30px;
+
+    @include media(xl) {
+      font-size: 44px;
+      line-height: 58px;
+    }
+  }
+
+  &-regular {
+    color: $dark;
+  }
+}
+

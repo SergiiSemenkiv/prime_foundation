@@ -1,0 +1,52 @@
+/*---briefing-room page---*/
+.page-briefing-room {
+
+  @include media(xl) {
+    .site-wrap,
+    .site-header__inner {
+      background-color: $main;
+    }
+    .page-title,
+    .shared-meta,
+    .shared-meta a,
+    .site-header__text-logo a,
+    .site-header__menu__item a {
+      color: $white;
+    }
+  }
+}
+
+.news__list {
+  margin-bottom: 40px;
+
+  &__item {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid$light;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+}
+.news-item__link {
+  @include makeLink(regular);
+
+  @include media(xl) {
+    @include makeLink(white, false)
+  }
+}
+.news-item__title {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  font-weight: 400;
+
+  @include media(xl) {
+    font-size: 32px;
+    line-height: 42px;
+    margin-bottom: 12px;
+    color: $white;
+  }
+}

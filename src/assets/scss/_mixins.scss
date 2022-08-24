@@ -1,0 +1,42 @@
+@mixin media($breakpoint) {
+  @if $breakpoint == md {
+    @media (min-width: $breakpoints_md) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media (min-width: $breakpoints_lg) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xl {
+    @media (min-width: $breakpoints_xl) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xxl {
+    @media (min-width: $breakpoints_xxl) {
+      @content;
+    }
+  }
+
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+
+}
+@mixin rtls($property, $ltr-value, $rtl-value) {
+  @if ($ltr-value != '') {
+    #{$property}: $ltr-value;
+  }
+
+  @if ($rtl-value != '') {
+    [dir=rtl] & {
+      #{$property}: $rtl-value;
+    }
+  }
+}
+

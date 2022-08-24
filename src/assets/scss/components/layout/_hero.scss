@@ -1,0 +1,279 @@
+/*---hero---*/
+@mixin makeHero($breakpoint: lg) {
+  .hero-from-#{$breakpoint} {
+    @include media($breakpoint) {
+      color: $white;
+    }
+    .hero__image {
+      @include media($breakpoint) {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      &__wrapper {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+
+        @include media(md) {
+          border-radius: 0;
+        }
+
+        @include media($breakpoint) {
+          position: inherit;
+        }
+      }
+    }
+    .hero__content {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 10;
+
+      @include media($breakpoint) {
+        min-height: 600px;
+      }
+
+      &__container {
+        @media (max-width: 991px) {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+@include makeHero;
+@include makeHero(xl);
+
+.hero {
+  margin-bottom: 24px;
+  @include media(md) {
+    margin-bottom: 32px;
+  }
+  @include media(xl) {
+    margin-bottom: 70px;
+  }
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  &__image__wrapper img {
+    max-width: none;
+    width: 100%;
+    min-height: 100%;
+  }
+}
+
+.home__welcome {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  @include media(lg) {
+    left: 16px;
+    right: 16px;
+  }
+
+  @include media(xl) {
+    display: none;
+  }
+
+  &__inner {
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 16px;
+    padding: 6px 1px;
+    color: $black;
+    background-color: $white;
+    border-radius: 4px;
+    text-align: center;
+    transition: all .3s;
+
+    @include media(lg) {
+      padding: 20px;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+}
+.home__topper {
+  margin-top: 24px;
+
+  @include media(lg) {
+    color: $white;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  @include media(xl) {
+    padding: 0;
+  }
+}
+.home__topper__title {
+  font-size: 24px;
+  line-height: 30px;
+  color: $main;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid$light;
+
+  @include media(lg) {
+    font-size: 40px;
+    line-height: 52px;
+    color: inherit;
+    padding-bottom: 0;
+    margin-bottom: 16px;
+    border-bottom: none;
+  }
+
+  @include media(xl) {
+    font-size: 52px;
+    line-height: 52px;
+    margin-bottom: 30px;
+  }
+}
+.home__topper__links {
+  &__list {
+    font-weight: 600;
+    font-size: 14px;
+    @include media(lg) {
+      margin-bottom: 16px;
+    }
+
+    @include media(xl) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    line-height: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media(lg) {
+      margin-bottom: 0;
+    }
+    @include media(xl) {
+      margin-bottom: 20px;
+    }
+    > a {
+      @include makeLink(regular);
+
+      @include media(lg) {
+        @include makeLink(white);
+      }
+    }
+  }
+
+  &__button {
+    min-width: 270px;
+    display: none;
+    text-transform: uppercase;
+
+    @include media(lg) {
+      display: inline-block;
+    }
+  }
+}
+
+.hero-administration {
+  text-align: center;
+  margin: 32px 0;
+  @include media(lg) {
+    margin: 70px 0;
+  }
+  @include media(xl) {
+    margin-top: 0;
+  }
+}
+.hero-administration .hero__content {
+  @media (max-width: 1199px) {
+    min-height: 0;
+  }
+}
+.hero-administration .hero__image__wrapper {
+  @media (max-width: 1199px) {
+    display: none;
+  }
+}
+.hero-administration__title {
+  color: $main;
+  margin-bottom: 20px;
+
+  @include media(xl) {
+    color: inherit;
+    margin-top: 105px;
+    margin-bottom: 40px;
+  }
+}
+.hero-administration__message {
+  color: $gray;
+
+  @include media(xl) {
+    font-size: 16px;
+    line-height: 28px;
+    color: inherit;
+  }
+}
+
+.hero-biography {
+  &__data {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  &__link {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    color: $main;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    @include media(xl) {
+      font-size: 10px;
+      line-height: 13px;
+      margin-bottom: 30px;
+    }
+  }
+  &__name {
+    color: $gray;
+    margin-bottom: 10px;
+
+    @include media(xl) {
+      color: $white;
+    }
+  }
+  &__position {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: $gray;
+
+    @include media(xl) {
+      color: $white;
+    }
+  }
+  &__message {
+    display: none;
+    @include media(xl) {
+      display: block;
+      margin-top: 20px;
+    }
+  }
+
+}
+
+
+

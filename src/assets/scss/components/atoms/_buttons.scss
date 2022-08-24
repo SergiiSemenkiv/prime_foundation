@@ -1,0 +1,50 @@
+/*---button---*/
+
+@mixin makeButton($type: primary) {
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: $white;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  padding: 18px .75rem;
+  border-radius: 4px;
+  line-height: 17px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+    @if $type == primary {
+        background-color: $main;
+        &:hover {
+            color: $white;
+            background-color: $main-hover;
+        }
+    } @else if $type == secondary {
+        background-color:$light;
+
+        &:hover {
+            color: $white;
+            background-color:$light;
+        }
+    }
+}
+
+button,
+.button {
+  @include makeButton;
+}
+
+
+
+.button-secondary {
+    @include makeButton(secondary)
+}

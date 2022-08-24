@@ -1,0 +1,38 @@
+:root {
+    --bs-gutter-x: 1rem;
+}
+
+$global-font-size: 100%;
+$global-lineheight: 1.5;
+$global-site-width: 1440px;
+$main: #4E9FBF;
+$main-50: #A7CFDF;
+$main-hover: #106A8D;
+$light: #BCE7FF;
+$dark: #404040;
+$gray: #505050;
+$white: #FFFFFF;
+$black: #000000;
+$primary-font: 'IBM Plex Sans Arabic', sans-serif;
+$secondary-font: 'Cairo', sans-serif;
+
+// 1. Global
+// ---------
+$global-font-size-regular: 16px;
+$global-lineheight-regular: 1.5;
+$bs-gutter-x: 1rem;
+$body-background: $white;
+$body-font-color: $dark;
+$body-font-family: $primary-font;
+$global-weight-normal: normal;
+$global-weight-bold: bold;
+$global-radius: 8px;
+$layout-direction: ltr !default;
+
+// 2. Breakpoints
+// --------------
+$breakpoints_xs: '320px';
+$breakpoints_md: '768px';
+$breakpoints_lg: '992px';
+$breakpoints_xl: '1200px';
+$breakpoints_xxl: '1440px';

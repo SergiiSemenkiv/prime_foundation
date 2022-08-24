@@ -1,0 +1,44 @@
+/*---page administration section---*/
+.administration__grid {
+  position: relative;
+  z-index: 10;
+
+  @include media(md) {
+    margin-top: 72px;
+    margin-bottom: 72px;
+  }
+
+  @include media(xl) {
+    margin-top: -240px;
+    margin-bottom: 130px;
+  }
+
+  &__item {
+    color: $gray;
+    margin-bottom: 32px;
+    min-width: 100%;
+
+    &:hover {
+      .administration__grid__img {
+        transform: scale(1.01) translateY(-4px);
+      }
+    }
+
+    @include media(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: all .3s ease-in-out;
+  }
+  &__name {
+    font-weight: 700;
+  }
+  &__position {
+    font-weight: 600;
+  }
+}

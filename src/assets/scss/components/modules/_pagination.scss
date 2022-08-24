@@ -1,0 +1,30 @@
+/*---pagination---*/
+.pagination {
+  color: $white;
+
+  @include media(xl) {
+    color: $main;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 0 15px;
+  }
+  &__item span {
+    color: $main;
+    @include media(xl) {
+      color: $white;
+    }
+  }
+  &__item a {
+    @include makeLink;
+
+    @include media(xl) {
+      @include makeLink(white, false)
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.shared-meta {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 13px;
+    color: $main;
+    text-transform: uppercase;
+
+    @include media(lg) {
+        justify-content: inherit;
+    }
+
+    &__separator {
+        padding: 0 10px;
+    }
+}
